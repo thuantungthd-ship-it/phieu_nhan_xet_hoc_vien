@@ -56,26 +56,60 @@ def grade_from_total(total):
     return "D"
 
 IELTS_BANDS = [
- (4.0, "<4.0", "Sơ cấp (cần xây lại nền tảng)", [
-   "Học viên đạt Band điểm dưới 4.0, tương đương trình độ sơ cấp. Học viên còn gặp nhiều khó khăn trong việc sử dụng tiếng Anh ở cả 4 kỹ năng, vốn từ vựng và ngữ pháp còn hạn chế, cần được xây dựng lại nền tảng một cách bài bản.",
-   "Kết quả thi hiện tại của học viên còn cách khá xa mục tiêu Band điểm mong muốn. Khả năng nghe hiểu, đọc hiểu, diễn đạt nói và viết đều cần được củng cố từ gốc. Học viên cần một lộ trình học tập trung vào nền tảng ngữ pháp - từ vựng trước khi luyện đề chuyên sâu.",
- ], "Học viên nên bắt đầu lại từ các khóa nền tảng (Foundation/Elementary) để củng cố ngữ pháp và từ vựng cơ bản trước khi quay lại luyện thi IELTS. Phụ huynh nên đồng hành xây dựng lộ trình học phù hợp, tăng cường số buổi học và ưu tiên các kỹ năng nền tảng."),
- (4.5, "4.0–4.5", "Tiền trung cấp (cần cải thiện)", [
-   "Học viên đạt Band 4.0-4.5, ở mức tiền trung cấp. Học viên đã có một số nền tảng tiếng Anh nhất định nhưng khả năng vận dụng vào bài thi thực tế (đặc biệt Nói và Viết) còn hạn chế. Cần tăng cường luyện tập theo dạng đề và mở rộng vốn từ vựng học thuật.",
-   "Kết quả hiện tại cho thấy học viên cần cải thiện thêm để đạt mục tiêu Band điểm mong muốn. Một số kỹ năng còn yếu hơn các kỹ năng khác, ảnh hưởng đến điểm tổng. Học viên nên tập trung luyện tập có định hướng theo từng dạng bài thi.",
- ], "Học viên cần tăng cường luyện đề theo từng kỹ năng, đặc biệt các kỹ năng còn yếu, đồng thời mở rộng vốn từ vựng theo chủ đề thường gặp trong IELTS. Nên duy trì lịch học đều đặn và làm quen dần với format đề thi thật."),
- (5.5, "5.0–5.5", "Trung cấp (khá ổn định)", [
-   "Học viên đạt Band 5.0-5.5, tương đương trình độ trung cấp. Học viên có khả năng giao tiếp cơ bản và xử lý được các dạng bài thi quen thuộc, tuy nhiên cần rèn luyện thêm để xử lý tốt các dạng câu hỏi khó và nâng cao độ chính xác trong Nói và Viết.",
-   "Học viên đã có nền tảng tương đối ổn định và đạt kết quả ở mức trung bình khá. Để tiến gần hơn tới mục tiêu Band điểm cao hơn, học viên cần luyện tập chuyên sâu các kỹ thuật làm bài và cải thiện độ trôi chảy, mạch lạc khi Nói và Viết.",
- ], "Học viên nên tập trung luyện các kỹ thuật làm bài (skimming, scanning, paraphrasing...) và tăng cường thực hành Nói - Viết theo chủ đề học thuật. Nên làm đề thi thử định kỳ để đánh giá tiến độ và điều chỉnh kế hoạch ôn tập kịp thời."),
- (6.5, "6.0–6.5", "Khá (trên trung cấp)", [
-   "Học viên đạt Band 6.0-6.5, tương đương trình độ khá - trên trung cấp, đáp ứng tốt yêu cầu đầu vào của nhiều trường đại học quốc tế. Học viên xử lý bài thi khá thành thạo, tuy nhiên vẫn còn một số lỗi nhỏ về ngữ pháp hoặc cách triển khai ý cần hoàn thiện thêm.",
-   "Học viên có nền tảng tiếng Anh khá vững và đạt kết quả tốt ở phần lớn các kỹ năng. Để đạt Band điểm cao hơn, học viên cần trau chuốt thêm về độ đa dạng từ vựng, cấu trúc câu và khả năng lập luận trong Nói - Viết.",
- ], "Học viên nên tiếp tục luyện tập nâng cao, tập trung vào việc đa dạng hóa từ vựng - cấu trúc câu và rèn luyện khả năng phản biện, lập luận trong Nói và Viết. Nên đặt mục tiêu làm quen với các dạng đề khó hơn để tiến gần Band điểm mục tiêu."),
- (999, "7.0+", "Cao cấp (xuất sắc)", [
-   "Học viên đạt Band 7.0 trở lên, tương đương trình độ cao cấp, đáp ứng tốt yêu cầu của hầu hết các chương trình học thuật và du học quốc tế. Học viên thể hiện khả năng sử dụng tiếng Anh linh hoạt, tự nhiên và xử lý tốt các dạng đề khó.",
-   "Đây là kết quả rất đáng khích lệ, cho thấy học viên đã có nền tảng tiếng Anh vững chắc và khả năng tư duy ngôn ngữ tốt. Học viên nên tiếp tục duy trì và trau dồi thêm để hướng đến Band điểm cao hơn nếu có nhu cầu.",
- ], "Học viên nên tiếp tục duy trì thói quen luyện tập, mở rộng vốn từ vựng chuyên sâu và rèn luyện thêm các kỹ thuật nâng cao nếu đặt mục tiêu Band điểm cao hơn (7.5+). Có thể tham gia các hoạt động học thuật bằng tiếng Anh (tranh biện, viết luận...) để phát triển toàn diện."),
+ (3.0, "<3.0", "Chưa đủ điều kiện vào lộ trình IELTS (cần học nền tảng)", [
+   "Học viên hiện có Band điểm dưới 3.0, tương đương trình độ mới bắt đầu làm quen với tiếng Anh học thuật. Vốn từ vựng, ngữ pháp và các kỹ năng nghe, nói, đọc, viết còn rất hạn chế, chưa đủ nền tảng để theo học chương trình IELTS.",
+   "Kết quả hiện tại của học viên còn cách khá xa yêu cầu đầu vào của lộ trình IELTS. Học viên cần được xây dựng lại nền tảng tiếng Anh một cách bài bản và toàn diện trước khi có thể bắt đầu luyện thi.",
+ ], [
+   "Học viên cần ưu tiên hàng đầu việc học tập, dành thời gian nhiều nhất có thể để củng cố ngữ pháp, từ vựng và các kỹ năng nền tảng.",
+   "Nên tham gia các khóa tiếng Anh nền tảng (Foundation/Elementary/Pre-IELTS) trước khi bắt đầu lộ trình IELTS chính thức.",
+   "Cần luyện tập đều đặn mỗi ngày, kết hợp nghe - nói - đọc - viết ở mức cơ bản để xây dựng phản xạ ngôn ngữ.",
+   "Gia đình nên đồng hành sát sao, tạo môi trường học tập kỷ luật và kiên trì để học viên sớm đủ điều kiện tham gia lộ trình IELTS.",
+ ]),
+ (4.0, "3.0–4.0", "IELTS 1 – IELTS 2 (giai đoạn nền tảng)", [
+   "Học viên đạt Band điểm 3.0 - 4.0, phù hợp bắt đầu lộ trình IELTS ở giai đoạn nền tảng. Học viên đã có một số vốn từ vựng và ngữ pháp cơ bản nhưng cần được xây dựng bài bản hơn ở cả 4 kỹ năng.",
+   "Kết quả hiện tại cho thấy học viên đang ở giai đoạn khởi đầu của lộ trình IELTS. Cần tập trung củng cố nền tảng ngữ pháp, từ vựng và làm quen dần với các dạng bài thi.",
+ ], [
+   "Học viên phù hợp tiếp tục theo học IELTS 1 hoặc IELTS 2 (15 tuần) để xây dựng nền tảng vững chắc trước khi vào giai đoạn luyện đề.",
+   "Nên duy trì lịch học đều đặn, tập trung củng cố ngữ pháp và mở rộng vốn từ vựng cơ bản.",
+   "Khuyến khích luyện nghe - nói mỗi ngày để làm quen dần với tiếng Anh học thuật.",
+   "Cần kiên trì trong giai đoạn đầu vì đây là nền tảng quan trọng cho cả lộ trình IELTS phía sau.",
+ ]),
+ (5.5, "4.0–5.5", "IELTS 3 – IELTS 5 (giai đoạn giữa)", [
+   "Học viên đạt Band điểm 4.0 - 5.5, phù hợp tiếp tục học ở giai đoạn giữa của lộ trình IELTS. Học viên đã nắm được kiến thức nền tảng và đang phát triển khả năng vận dụng vào các dạng bài thi.",
+   "Kết quả hiện tại cho thấy học viên có sự tiến bộ so với giai đoạn đầu. Cần tiếp tục rèn luyện kỹ năng làm bài và mở rộng vốn từ vựng học thuật để tiến xa hơn trong lộ trình.",
+ ], [
+   "Học viên phù hợp tiếp tục theo học IELTS 3, IELTS 4 hoặc IELTS 5 (15 tuần) tuỳ theo lịch học và tiến độ hiện tại.",
+   "Nên tăng cường luyện tập các dạng bài thi để làm quen với format và kỹ thuật làm bài.",
+   "Khuyến khích mở rộng vốn từ vựng theo chủ đề học thuật thường gặp trong IELTS.",
+   "Cần duy trì việc luyện nói và viết thường xuyên để cải thiện khả năng diễn đạt.",
+ ]),
+ (6.5, "5.5–6.5", "IELTS 6 – IELTS 8 (giai đoạn nâng cao)", [
+   "Học viên đạt Band điểm 5.5 - 6.5, phù hợp tiếp tục học ở giai đoạn nâng cao của lộ trình IELTS. Học viên đã có nền tảng khá vững và đang hoàn thiện kỹ năng làm bài thi.",
+   "Kết quả hiện tại cho thấy học viên tiến bộ rõ rệt và đang tiến gần tới mục tiêu Band điểm mong muốn. Cần tiếp tục rèn luyện chuyên sâu các kỹ thuật làm bài.",
+ ], [
+   "Học viên phù hợp tiếp tục theo học IELTS 6, IELTS 7 hoặc IELTS 8 (12-15 tuần) tuỳ theo lịch học và tiến độ hiện tại.",
+   "Nên tập trung luyện các kỹ thuật làm bài nâng cao, đặc biệt ở phần Nói và Viết.",
+   "Khuyến khích làm đề thi thử định kỳ để đánh giá tiến độ và điều chỉnh kế hoạch ôn tập.",
+   "Cần trau dồi thêm về độ đa dạng từ vựng và cấu trúc câu để nâng cao điểm số.",
+ ]),
+ (7.5, "6.5–7.5", "IELTS 9 – IELTS 11 (giai đoạn hoàn thiện)", [
+   "Học viên đạt Band điểm 6.5 - 7.5, phù hợp tiếp tục học ở giai đoạn cuối của lộ trình IELTS. Học viên có nền tảng vững chắc và khả năng xử lý tốt các dạng đề khó.",
+   "Đây là kết quả rất đáng khích lệ, cho thấy học viên đã gần hoàn thành lộ trình. Học viên nên tiếp tục duy trì và hoàn thiện các kỹ năng còn lại để đạt mục tiêu Band điểm mong muốn.",
+ ], [
+   "Học viên phù hợp tiếp tục theo học IELTS 9, IELTS 10 hoặc IELTS 11 (12-15 tuần) để hoàn thiện lộ trình.",
+   "Nên tập trung luyện đề sát với format thi thật, rèn phản xạ và quản lý thời gian làm bài.",
+   "Khuyến khích trau chuốt kỹ năng lập luận, diễn đạt trong Nói và Viết để đạt Band điểm cao nhất có thể.",
+   "Có thể tham gia thêm các hoạt động học thuật bằng tiếng Anh để phát triển toàn diện trước kỳ thi chính thức.",
+ ]),
+ (999, ">7.5", "Đã vượt chuẩn đầu ra lộ trình hiện có", [
+   "Học viên đạt Band điểm trên 7.5, vượt qua yêu cầu của lộ trình các lớp hiện có, tương đương trình độ cao cấp. Học viên có khả năng sử dụng tiếng Anh thành thạo, linh hoạt và xử lý tốt hầu hết các dạng đề khó.",
+   "Đây là kết quả xuất sắc, học viên đã hoàn thành tốt mục tiêu của lộ trình IELTS hiện tại và sẵn sàng cho các kỳ thi chính thức hoặc các chương trình học thuật quốc tế.",
+ ], [
+   "Học viên đã vượt chuẩn đầu ra của lộ trình các lớp hiện có, không cần tiếp tục theo lộ trình này.",
+   "Có thể đăng ký thi IELTS chính thức nếu chưa thi, hoặc chuyển sang các chương trình luyện thi chuyên sâu hơn nếu có nhu cầu Band điểm cao hơn.",
+   "Nên tiếp tục duy trì trình độ hiện tại thông qua việc sử dụng tiếng Anh thường xuyên trong học tập và cuộc sống.",
+   "Khuyến khích tham gia các hoạt động học thuật, tranh biện, viết luận bằng tiếng Anh để phát triển toàn diện.",
+ ]),
 ]
 
 def ielts_band_bucket(overall):
@@ -116,13 +150,15 @@ STUDY_TIME_E = {
 }
 
 def study_time_ielts(overall):
+    if overall < 3.0:
+        return "5 buổi/tuần, 120 phút/buổi; ưu tiên tuyệt đối cho việc học nền tảng trước khi vào lộ trình IELTS."
     if overall < 4.0:
         return "4 buổi/tuần, 120 phút/buổi, ưu tiên củng cố nền tảng trước khi luyện đề."
-    if overall < 5.0:
+    if overall < 5.5:
         return "3-4 buổi/tuần, 120 phút/buổi."
-    if overall < 6.0:
+    if overall < 6.5:
         return "3 buổi/tuần, 90-120 phút/buổi."
-    if overall < 7.0:
+    if overall <= 7.5:
         return "2-3 buổi/tuần, 90 phút/buổi."
     return "2 buổi/tuần, 90 phút/buổi — duy trì nhịp học hiện tại."
 

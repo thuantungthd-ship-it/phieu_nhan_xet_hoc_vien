@@ -310,7 +310,7 @@ st.markdown(
     """
     <div class="hero">
         <div class="badge">🎓 CIE VIETNAM · AUTO REPORT TOOL</div>
-        <h1>Tạo Phiếu Nhận Xét & Đánh Giá Học Viên</h1>
+        <h1>Phiếu Nhận Xét Học Viên</h1>
         <p>Upload file điểm — nhận ngay bộ phiếu Word chuẩn mẫu công ty cho từng học viên,
         kèm nhận xét, kiến nghị và lộ trình ôn tập tự động.</p>
     </div>
@@ -318,13 +318,13 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Nhac nen (tuy chon) - widget nho, dat ngay duoi hero, co nut bat/tat
+# Nhac nen he thong - CO DINH (nhung san trong engine.py), tu dong tai, khong can upload.
 # (Luu y ky thuat: components.html chay trong 1 iframe rieng cua Streamlit,
 #  nen KHONG dung position:fixed o day - iframe fixed=0x0 se lam nut bi an mat.
 #  Thay vao do dat widget noi lien trong dong chay cua trang, voi kich thuoc du hien nut.)
 # =========================================================================
-if st.session_state.get("bg_music_b64"):
-    music_b64 = st.session_state["bg_music_b64"]
+if getattr(engine, "DEFAULT_MUSIC_B64", ""):
+    music_b64 = engine.DEFAULT_MUSIC_B64
     components.html(
         f"""
         <div style="display:flex; align-items:center; gap:10px; font-family: 'Be Vietnam Pro', sans-serif;">
@@ -443,19 +443,5 @@ if st.session_state["history"]:
                 f'<div class="history-item"><span>📄 {fn}</span><span class="cnt">{n} học viên</span></div>',
                 unsafe_allow_html=True,
             )
-
-with st.expander("🎵 Nhạc nền cho trang web (tuỳ chọn)"):
-    st.caption(
-        "Nhạc chỉ áp dụng cho **giao diện web này**, không ảnh hưởng gì tới phiếu Word được tạo ra."
-    )
-    new_music = st.file_uploader("Nhạc nền (.mp3)", type=["mp3"], key="music_uploader")
-    if new_music is not None:
-        st.session_state["bg_music_b64"] = base64.b64encode(new_music.getbuffer()).decode()
-        st.success("Đã đặt nhạc nền mới — nút bật/tắt nhạc sẽ xuất hiện phía trên trang.")
-        st.rerun()
-
-    if st.session_state.get("bg_music_b64") and st.button("🗑️ Bỏ nhạc nền"):
-        del st.session_state["bg_music_b64"]
-        st.rerun()
 
 st.markdown('<div class="footer-note">Made for CIE VIETNAM · Powered by Streamlit</div>', unsafe_allow_html=True)
